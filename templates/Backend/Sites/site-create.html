@@ -1,0 +1,61 @@
+{% extends 'Backend/Dashboard/base.html' %}
+{% load static %}
+
+{% block title %}
+
+    <title>Sites | Ecotonics</title>
+
+{% endblock title %}
+
+{% block css %}
+
+{% endblock css %}
+
+{% block content %}
+<div class="container-xxl flex-grow-1 container-p-y">
+
+    {% include 'Backend/Sites/site-overview.html' %}
+
+    <div class="card">
+        <div class="card-body">
+            <form id="formAccountSettings" method="post">
+                {% csrf_token %}
+                <div class="row">
+
+                    <div class="mb-3 col-md-6">
+                        <label for="siteName" class="form-label">Site Name</label>
+                        <input class="form-control" type="text" id="siteName" name="siteName" autofocus placeholder="Enter Site Name" required/>
+                    </div>
+
+                    <div class="mb-3 col-md-6">
+                        <label for="siteLocation" class="form-label">Site Location</label>
+                        <input class="form-control" type="text" id="siteLocation" name="siteLocation" autofocus placeholder="Enter Site Location" required/>
+                    </div>
+
+                    <div class="mb-3 col-md-6">
+                        <label for="contactNumber" class="form-label">Contact Number</label>
+                        <input class="form-control" type="text" id="contactNumber" name="contactNumber" autofocus placeholder="Enter Contact Number" required/>
+                    </div>
+
+                    <div class="mb-3 col-md-6">
+                        <label for="emailAddress" class="form-label">Email Address</label>
+                        <input class="form-control" type="text" id="emailAddress" name="emailAddress" autofocus placeholder="Enter Email Address"/>
+                    </div>
+
+                </div>
+
+                <div class="mt-2 text-center">
+                    <button type="submit" class="btn btn-primary me-2">Save changes</button>
+                    <a class="btn btn-label-secondary" href="{% url 'sites' %}">Cancel</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock content %}
+
+{% block js %}
+<script src="{% static 'Backend/js/dashboards-analytics.js' %}"></script>
+{% endblock js %}

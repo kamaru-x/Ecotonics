@@ -16,6 +16,7 @@ window.config = {
     info: '#03c3ec',
     warning: '#ffab00',
     danger: '#ff3e1d',
+    error: '#ff3e1d',
     dark: '#233446',
     black: '#000',
     white: '#fff',

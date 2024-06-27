@@ -1,0 +1,80 @@
+{% extends 'Backend/Dashboard/base.html' %}
+{% load static %}
+
+{% block title %}
+
+    <title>Sites | Ecotonics</title>
+
+{% endblock title %}
+
+{% block css %}
+
+{% endblock css %}
+
+{% block content %}
+<div class="container-xxl flex-grow-1 container-p-y">
+
+    {% include 'Backend/Sites/site-overview.html' %}
+
+    <!-- Bordered Table -->
+    <div class="card card-action">
+      <div class="card-header align-items-center flex-wrap gap-3 py-4">
+        <h5 class="card-action-title mb-0">WORK SITES</h5>
+        <div class="card-action-element">
+          <!-- <button class="btn btn-label-primary" type="button" data-bs-toggle="modal" data-bs-target="#addNewAddress"> ADD NEW SITE </button> -->
+          <a class="btn btn-label-primary" href="{% url 'create-site' %}">ADD NEW SITE</a>
+        </div>
+      </div>
+      <!-- <h5 class="card-header">WORK SITES</h5> -->
+      <div class="card-body">
+        <div class="table-responsive text-nowrap">
+          <table class="table table-bordered text-center">
+            <thead>
+              <tr>
+                <th>NAME</th>
+                <th>PLACE</th>
+                <th>CONTACT</th>
+                <th>STATUS</th>
+                <th>ACTION</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for site in sites %}
+              <tr>
+                <td>{{ site.Name }}</td>
+                <td>{{ site.Location }}</td>
+                <td>{{ site.Contact }}</td>
+                <td><span class="badge bg-label-warning me-1">PENDING</span></td>
+                <td>
+                  <div class="dropdown">
+                    <button
+                      type="button"
+                      class="btn p-0 dropdown-toggle hide-arrow"
+                      data-bs-toggle="dropdown">
+                      <i class="bx bx-dots-vertical-rounded"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="javascript:void(0);"
+                        ><i class="bx bx-edit-alt me-1"></i> Edit</a
+                      >
+                      <a class="dropdown-item" href="javascript:void(0);"
+                        ><i class="bx bx-trash me-1"></i> Delete</a
+                      >
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!--/ Bordered Table -->
+
+</div>
+{% endblock content %}
+
+{% block js %}
+<script src="{% static 'Backend/js/dashboards-analytics.js' %}"></script>
+{% endblock js %}
