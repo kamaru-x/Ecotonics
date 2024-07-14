@@ -28,6 +28,8 @@ urlpatterns = [
     path('',include('ErrHandler.urls')),
     path('',include('Frontend.urls')),
     path('dashboard/',include('Dashboard.urls')),
+    path('dashboard/',include('Core.urls')),
+    path('dashboard/',include('Works.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

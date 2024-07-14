@@ -83,15 +83,20 @@
               <span class="menu-header-text" data-i18n="MASTERS">MASTERS</span>
             </li>
             <!-- MASTERS -->
-            
-            <!-- Sites -->
-            <li class="menu-item {% if page == 'sites' %} active {% endif %}">
-                <a href="{% url 'sites' %}" class="menu-link">
-                  <i class="menu-icon tf-icons bx bx-briefcase-alt-2"></i>
-                  <div class="text-truncate" data-i18n="Sites">Sites</div>
-                </a>
+
+            <li class="menu-item {% if page == 'services' %} active {% endif %}">
+              <a href="{% url 'services' %}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-cog"></i>
+                <div class="text-truncate" data-i18n="Services">Services</div>
+              </a>
             </li>
-            <!-- Sites -->
+
+            <li class="menu-item {% if page == 'service-calls' %} active {% endif %}">
+              <a href="{% url 'service-calls' %}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-phone"></i>
+                <div class="text-truncate" data-i18n="Service Calls">Service Calls</div>
+              </a>
+            </li>
 
             <!-- Technicians menu start -->
             <li class="menu-item">
@@ -103,12 +108,88 @@
               <ul class="menu-sub">
                 <li class="menu-item">
                   <a href="" class="menu-link">
-                    <div class="text-truncate" data-i18n="Dashboard">Dashboard</div>
+                    <div class="text-truncate" data-i18n="Technicians">Technicians</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="" class="menu-link">
+                    <div class="text-truncate" data-i18n="Attandance">Attandance</div>
                   </a>
                 </li>
               </ul>
             </li>
             <!-- Technicians menu end -->
+
+            <!-- Leads menu start -->
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-clipboard"></i>
+                <box-icon name='briefcase-alt-2'></box-icon>
+                <div class="text-truncate" data-i18n="Leads">Leads</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="" class="menu-link">
+                    <div class="text-truncate" data-i18n="Pending Leads">Pending Leads</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="" class="menu-link">
+                    <div class="text-truncate" data-i18n="Confirmed Leads">Confirmed Leads</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!-- Works menu end -->
+
+            <!-- Works menu start -->
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-clipboard"></i>
+                <box-icon name='briefcase-alt-2'></box-icon>
+                <div class="text-truncate" data-i18n="Works">Works</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="" class="menu-link">
+                    <div class="text-truncate" data-i18n="Clients">Clients</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="" class="menu-link">
+                    <div class="text-truncate" data-i18n="Works">Works</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!-- Works menu end -->
+
+            <!-- Payments menu start -->
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-money"></i>
+                <box-icon name='briefcase-alt-2'></box-icon>
+                <div class="text-truncate" data-i18n="Payments">Payments</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="" class="menu-link">
+                    <div class="text-truncate" data-i18n="Purchases">Purchases</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="" class="menu-link">
+                    <div class="text-truncate" data-i18n="Payments">Payments</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="" class="menu-link">
+                    <div class="text-truncate" data-i18n="Bills">Bills</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!-- Payments menu end -->
 
             <!-- Cashflow -->
             <li class="menu-item {% if page == 'cashflow' %} active open {% endif %}">
@@ -290,7 +371,7 @@
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="{% static 'Backend/img/avatars/1.png' %}" alt class="w-px-40 h-auto rounded-circle" />
+                      <img src="{% static 'Backend/img/avatars/avatar.jpg' %}" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -299,11 +380,11 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="{% static 'Backend/img/avatars/1.png' %}" alt class="w-px-40 h-auto rounded-circle" />
+                              <img src="{% static 'Backend/img/avatars/avatar.jpg' %}" alt class="w-px-40 h-auto rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <span class="fw-medium d-block">John Doe</span>
+                            <span class="fw-medium d-block">{{ request.user }}</span>
                             <small class="text-muted">Admin</small>
                           </div>
                         </div>

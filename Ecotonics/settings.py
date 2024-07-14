@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'ErrHandler', # app for error handling
     'Frontend', # app for handling frontend site
     'Dashboard', # app for handling dashboard
+    'Core', # app for handling Core functionalities
+    'Works', # app for handling Work functionalities
 ]
 
 MIDDLEWARE = [
