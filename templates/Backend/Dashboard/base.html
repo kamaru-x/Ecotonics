@@ -99,15 +99,15 @@
             </li>
 
             <!-- Technicians menu start -->
-            <li class="menu-item">
+            <li class="menu-item {% if page == 'technicians' %} active open {% endif %}">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-user"></i>
                 <box-icon name='briefcase-alt-2'></box-icon>
                 <div class="text-truncate" data-i18n="Technicians">Technicians</div>
               </a>
               <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="" class="menu-link">
+                <li class="menu-item {% if sub_page == 'technicians' %} active {% endif %}">
+                  <a href="{% url 'technicians' %}" class="menu-link">
                     <div class="text-truncate" data-i18n="Technicians">Technicians</div>
                   </a>
                 </li>

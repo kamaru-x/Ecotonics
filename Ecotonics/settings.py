@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'Dashboard', # app for handling dashboard
     'Core', # app for handling Core functionalities
     'Works', # app for handling Work functionalities
+    'Technicians', # app for handling technicians
 ]
 
 MIDDLEWARE = [

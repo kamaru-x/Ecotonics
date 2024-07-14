@@ -1,0 +1,70 @@
+{% extends 'Backend/Dashboard/base.html' %}
+{% load static %}
+
+{% block title %}
+
+    <title>Sites | Ecotonics</title>
+
+{% endblock title %}
+
+{% block css %}
+
+{% endblock css %}
+
+{% block content %}
+<div class="container-xxl flex-grow-1 container-p-y">
+
+    <div class="card">
+        <div class="card-body">
+            <h2 class="text-center mb-5 mt-3">ADD TECHNICIAN</h2>
+            <form id="formAccountSettings" method="post">
+                {% csrf_token %}
+                <div class="row">
+
+                    <div class="mb-3 col-md-6">
+                        <label class="form-label">Technician Name</label>
+                        <input class="form-control" type="text" id="name" name="name" autofocus placeholder="Enter Technician Name" required/>
+                    </div>
+
+                    <div class="mb-3 col-md-6">
+                        <label class="form-label">Technician Location</label>
+                        <input class="form-control" type="text" id="location" name="location" autofocus placeholder="Enter Technician Location" required/>
+                    </div>
+
+                    <div class="mb-3 col-md-6">
+                        <label class="form-label">Contact Number</label>
+                        <input class="form-control" type="text" id="mobile" name="mobile" autofocus placeholder="Enter Contact Number" required/>
+                    </div>
+
+                    <div class="mb-3 col-md-6">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input class="form-control" type="text" id="email" name="email" autofocus placeholder="Enter Email Address"/>
+                    </div>
+
+                    <div class="mb-3 col-md-6">
+                        <label for="username" class="form-label">Username</label>
+                        <input class="form-control" type="text" id="username" name="username" autofocus placeholder="Enter Technician Username"/>
+                    </div>
+
+                    <div class="mb-3 col-md-6">
+                        <label for="password" class="form-label">Password</label>
+                        <input class="form-control" type="password" id="password" name="password" autofocus placeholder="Enter Technician Password"/>
+                    </div>
+
+                </div>
+
+                <div class="mt-2 text-center">
+                    <button type="submit" class="btn btn-primary me-2">SUBMIT</button>
+                    <a class="btn btn-label-secondary" href="{% url 'service-calls' %}">CANCEL</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock content %}
+
+{% block js %}
+<script src="{% static 'Backend/js/dashboards-analytics.js' %}"></script>
+{% endblock js %}
